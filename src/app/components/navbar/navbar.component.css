@@ -1,0 +1,18 @@
+.headerPos {
+    background-color: #5BC8A3;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    align-items: center;
+    
+}
+
+.headerPos ul {
+    display: flex;
+    font-size: 2.6vh;
+    list-style: none;
+    gap: 2em;
+    color: white;
+}

@@ -1,0 +1,53 @@
+<section class="centerElements">
+    <h1>Editar usuário</h1>
+    <br/>
+    <form (ngSubmit)="updateUser()" method="POST" class="formEdit container">
+        <fieldset class="row justify-content-center">
+            <label for="usuario_nome" class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                Nome<br/>
+                <input 
+                    id="title"
+                    name="title"
+                    type="text" 
+                    placeholder="Luiz Fellipe" 
+                    class="form-control"
+                    required
+                    [(ngModel)]="user.usuario_nome"
+                />
+            </label>
+            <br/><br/><br/>
+            <label for="usuario_email" class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                E-mail
+                <br/>
+                <input 
+                    id="total"
+                    name="total"
+                    type="text" 
+                    placeholder="felipe_luiz96@yahoo.com"
+                    class="form-control"
+                    required
+                    [(ngModel)]="user.usuario_email"
+                />
+            </label>
+            <br/><br/><br/>
+            <label for="usuario_senha" class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                Senha
+                <br/>
+                <input 
+                    id="dateGoal"
+                    name="dateGoal"
+                    type="password" 
+                    class="form-control"
+                    required
+                    [(ngModel)]="user.usuario_senha"
+                />
+            </label>
+        </fieldset>
+        
+        <br/>
+        <input type="submit" class="btn btn-primary " value="Editar">
+        &nbsp;
+        <input [routerLink]="['/']" type="submit" class="btn btn-secondary" value="<- Voltar">
+        
+    </form>
+</section>

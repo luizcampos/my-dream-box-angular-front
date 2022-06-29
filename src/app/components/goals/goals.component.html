@@ -1,0 +1,102 @@
+<section class="centerElements">
+    <h1>Nova meta</h1>
+    <br/>
+    <form (ngSubmit)="insertData()" method="POST" class="formEdit container">
+        <fieldset class="row justify-content-center">
+            <label for="goal_title" class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                Título<br/>
+                <input 
+                    id="title"
+                    name="title"
+                    type="text" 
+                    placeholder="Viagem para Salvador" 
+                    class="form-control"
+                    required
+                    [(ngModel)]="goal.goal_title"
+                />
+            </label>
+            <br/><br/><br/>
+            <label for="goal_cash_total" class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                Total necessário (R$)
+                <br/>
+                <input 
+                    id="total"
+                    name="total"
+                    type="number" 
+                    placeholder="R$"
+                    class="form-control"
+                    required
+                    [(ngModel)]="goal.goal_cash_total"
+                />
+            </label>
+            <br/><br/><br/>
+            <label for="goal_date" class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                Data para realização
+                <br/>
+                <input 
+                    id="dateGoal"
+                    name="dateGoal"
+                    type="text" 
+                    maxlength="10"
+                    placeholder="dd/mm/aaaa"
+                    class="form-control"
+                    onkeypress="formatar('##/##/####', this)"
+                    required
+                    [(ngModel)]="goal.goal_date"
+                />
+            </label>
+            <br/><br/><br/>
+            <label for="goal_cash_today" class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                Quanto você já possui reservado? (R$)
+                <br/>
+                <input 
+                    id="cash"
+                    name="cash"
+                    type="number" 
+                    placeholder="R$"
+                    class="form-control"
+                    required
+                    [(ngModel)]="goal.goal_cash_today"
+                />
+            </label>
+        </fieldset>
+        
+        <br/>
+        <input type="submit" class="btn btn-success" value="Criar">
+        
+    </form>
+</section>
+
+<br/><br/>
+
+<section class="centerElements col-12">
+    <h4>Essas são as suas metas:</h4>
+</section>
+
+<div class="">
+    <section class="cardsGoals">
+        <div class="row">
+            
+                <div class="card col-xs-12 col-sm-12 col-md-3 col-lg-3" *ngFor="let goal of goals">
+                    <header class="font-bolder my-header-card">
+                        {{ goal.goal_title }}
+                        <div>
+                            <button routerLink="update/{{goal.id}}" value="" class="btnUpdate">    
+                                <i class="ph-pencil-simple"></i>
+                            </button>
+
+                            <button (click)="deletetData(goal.id)" value="" class="btnDelete">    
+                                <i class="ph-trash"></i>
+                            </button>
+                        </div>
+                    </header>
+                    <div class="card-body">
+                        <p class="card-title">{{ goal.goal_date }}</p>
+                        <p class="card-title">Você tem R${{ goal.goal_cash_total }}</p>
+                        <p class="card-title">Você precisa de R${{ goal.goal_cash_total }}</p>
+                        <p>Action</p>
+                    </div>
+                </div>
+        </div>
+    </section>
+</div>

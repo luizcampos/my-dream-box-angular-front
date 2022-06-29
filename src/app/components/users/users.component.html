@@ -1,0 +1,84 @@
+<section class="centerElements">
+    <h1>Novo usuário</h1>
+    <br/>
+    <form (ngSubmit)="insertDataUser()" method="POST" class="formEdit container">
+        <fieldset class="row justify-content-center">
+            <label for="usuario_nome" class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                Nome<br/>
+                <input 
+                    id="nome"
+                    name="nome"
+                    type="text" 
+                    placeholder="Luiz Fellipe" 
+                    class="form-control"
+                    required
+                    [(ngModel)]="user.usuario_nome"
+                />
+            </label>
+            <br/><br/><br/>
+            <label for="usuario_email" class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                Email
+                <br/>
+                <input 
+                    id="email"
+                    name="email"
+                    type="text" 
+                    placeholder="felipe_luiz96@yahoo.com"
+                    class="form-control"
+                    required
+                    [(ngModel)]="user.usuario_email"
+                />
+            </label>
+            <br/><br/><br/>
+            <label for="usuario_senha" class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                Senha
+                <br/>
+                <input 
+                    id="dateUser"
+                    name="dateUser"
+                    type="password" 
+                    placeholder="***********"
+                    class="form-control"
+                    required
+                    [(ngModel)]="user.usuario_senha"
+                />
+            </label>
+        </fieldset>
+        
+        <br/>
+        <input type="submit" class="btn btn-success" value="Criar">
+        
+    </form>
+</section>
+
+<br/><br/>
+
+<section class="centerElements col-12">
+    <h4>Usuários cadastrados:</h4>
+</section>
+
+<div class="">
+    <section class="cardsGoals">
+        <div class="row">
+            
+                <div class="card col-xs-12 col-sm-12 col-md-3 col-lg-3" *ngFor="let user of users">
+                    <header class="font-bolder my-header-card">
+                        {{ user.usuario_nome }}
+                        <div>
+                            <button routerLink="update/{{user.id}}" value="" class="btnUpdate">    
+                                <i class="ph-pencil-simple"></i>
+                            </button>
+
+                            <button (click)="deletetDataUser(user.id)" value="" class="btnDelete">    
+                                <i class="ph-trash"></i>
+                            </button>
+                        </div>
+                    </header>
+                    <div class="card-body">
+                        <p class="card-title"><strong>E-mail:</strong> {{ user.usuario_email}}</p>
+                        <p class="card-title"><strong>Senha:</strong> {{user.usuario_senha}}</p>
+                    </div>
+                </div>
+        </div>
+    </section>
+</div>

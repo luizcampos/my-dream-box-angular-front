@@ -1,0 +1,43 @@
+/* Card */
+.card{
+    margin: 5px;
+}
+
+.my-header-card{
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 2;
+}
+
+.cardsGoals{
+    padding: 40px;
+}
+
+.font-bolder{
+    font-weight: bolder;
+}
+
+/* Form  */
+
+.formEdit{
+    font-size:1.4rem; 
+}
+
+.centerElements{
+    align-items: center;
+    text-align: center;
+}
+
+.painelFlex{
+    display: flex;
+
+}
+
+.btnDelete, .btnUpdate{
+    background-color: #FFFFFF;
+    border-style: none;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+}
