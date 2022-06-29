@@ -1,17 +1,4 @@
-# MyDreamBoxFront
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.3.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-
-
-
-<p align="center"><img src="public/img/logo-myDreamBox.png" width="400"></p>
 <h1 align="center">myDreamBox</h1>
-
 
 ## Sobre o myDreamBox
 
@@ -21,6 +8,8 @@ O myDreamBox possui as telas necessárias para você utilizar juntamento com a A
 - Visualizar usuários cadastrados;
 - Editar usuários;
 - Excluir usuários.
+
+Esse projeto foi gerado pelo [Angular CLI](https://github.com/angular/angular-cli) version 14.0.3.
 
 
 ## Como utilizar?
